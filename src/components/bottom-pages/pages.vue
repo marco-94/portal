@@ -1,6 +1,6 @@
 <template>
   <div>
-    <el-footer>
+    <el-footer style="height: 32px">
       <div>
         <div class="block" style="text-align: right">
           <el-pagination

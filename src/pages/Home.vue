@@ -1,20 +1,24 @@
 <template>
   <div>
-      <el-main>
-        <h1>首页</h1>
-      </el-main>
+    <el-main>
+      <div>
+        <img src="../assets/index.png">
+      </div>
+    </el-main>
   </div>
 </template>
 
 <script>
-export default {
-  name: 'Home',
-  data () {
-    return {}
+  export default {
+    name: 'Home',
+    data() {
+      return {}
+    }
   }
-}
 </script>
 
 <style>
-
+  .el-container {
+    height: 100%;
+  }
 </style>

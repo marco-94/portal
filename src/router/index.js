@@ -6,6 +6,9 @@ import UserList from '../pages/UserList.vue'
 import UserDetail from '../pages/UserDetail.vue'
 import UserEdit from '../pages/UserEdit.vue'
 import ProjectList from "../pages/project/ProjectList.vue";
+import ProjectDetail from "../pages/project/ProjectDetail.vue";
+import ProjectEdit from "../pages/project/ProjectEdit.vue";
+import ProjectCreate from "../pages/project/ProjectCreate.vue";
 
 Vue.use(Router);
 //获取原型对象上的push函数
@@ -65,6 +68,33 @@ export default new Router({
       path: '/project_list',
       name: 'ProjectList',
       component: ProjectList,
+      meta: {
+        leftTabShow: true,
+        headerShow: true
+      }
+    },
+    {
+      path: '/project_detail',
+      name: 'ProjectDetail',
+      component: ProjectDetail,
+      meta: {
+        leftTabShow: true,
+        headerShow: true
+      }
+    },
+    {
+      path: '/project_edit',
+      name: 'ProjectEdit',
+      component: ProjectEdit,
+      meta: {
+        leftTabShow: true,
+        headerShow: true
+      }
+    },
+    {
+      path: '/project_create',
+      name: 'ProjectCreate',
+      component: ProjectCreate,
       meta: {
         leftTabShow: true,
         headerShow: true

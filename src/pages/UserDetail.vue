@@ -18,7 +18,7 @@
 </template>
 
 <script>
-  import axios from "axios";
+  import {post} from "../utils/index.js"
 
   export default {
     name: 'UserDetail',
@@ -36,30 +36,12 @@
     methods: {
       get_detail() {
         this.tableData.user_id = this.$route.query.user_id;
-        axios.get('/user/detail/', {
-          params: {
-            user_info: this.$route.query.user_id
-          }
-        })
-          .then(response => {
-            if (response.data.list.length > 0) {
-              this.tableData = response.data.list[0];
-            }
-          })
-          .catch(function (error) {
-            console.log(error);
-          })
-      },
-      get_detail_v2() {
-        this.tableData.user_id = this.$route.query.user_id;
         let data = {
           user_id: this.$route.query.user_id
-        }
-        axios.post('/user/user_detail', data)
+        };
+        post('/user/user_detail', data)
           .then(response => {
-            if (response.data.list.length > 0) {
-              this.tableData = response.data.list[0];
-            }
+            this.tableData = response.data.data;
           })
           .catch(function (error) {
             console.log(error.data);
@@ -71,7 +53,7 @@
     },
     created() {
       // this.get_detail();
-      this.get_detail_v2();
+      this.get_detail();
     }
   }
 </script>
